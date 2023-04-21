@@ -1,0 +1,18 @@
+<!-- <p>url route is {{ urlRoute }}</p> -->
+<div *ngFor="let user of usersData">
+  <app-user (onData)="func($event)"
+    [user]="user"
+    [isDeleted]="isDeleted"
+    [activateButton]="activateButton"
+    [deactivateButton]="deactivateButton"
+    [manageButton]="manageButton"
+  ></app-user>
+</div>
+<router-outlet></router-outlet>
+
+<!-- 
+|| *ngIf="
+      (urlRoute === '/active' && user.isDeleted === false) ||
+      (urlRoute === '/deleted' && user.isDeleted === true)
+    "
+        'manage' in urlRoute -->
