@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { UsersService } from './services/users.service';
-import { HomeComponent } from './components/Home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { ActiveModule } from './active/active.module';
 import { DeletedModule } from './deleted/deleted.module';
 import { ManageModule } from './manage/manage.module';
@@ -23,7 +23,7 @@ import { ActiveRoutingModule } from './active/active-routing.module';
     ActiveModule,
     DeletedModule,
     ManageModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [UsersService],
   bootstrap: [AppComponent],

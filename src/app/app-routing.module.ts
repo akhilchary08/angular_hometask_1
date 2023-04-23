@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/Home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { ActiveModule } from './active/active.module';
 import { DeletedModule } from './deleted/deleted.module';
 import { ActiveComponent } from './active/active.component';

@@ -24,8 +24,5 @@ export class UserslistComponent implements OnInit{
         console.log(this.manageButton," managebtn is deleted")
 
     }
-    public func(data:any){
-        this.manageUser=data;
-        console.log(data," data in userlist")
-      }
+
 }
