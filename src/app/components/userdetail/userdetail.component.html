@@ -1,8 +1,8 @@
 <!-- <p >userdetail component {{userData | json}}</p> -->
 
 <div class="card card-body border-dark">
-  <p class="font-weight-bold mb-0 ">{{ userData.firstName }} {{ userData.lastName }}</p>
-  <small class="{{userData.isDeleted?'text-danger':'text-success'}}">{{userData.isDeleted?'Deleted':'Active'}}</small>
+  <p class="font-weight-bold mb-0 "> {{userData.firstName | userFullName:[userData.lastName]  | titlecase }}</p>
+  <small class="{{userData.isDeleted?'text-danger':'text-success'}}">{{ userData.isDeleted |activeDeletedDesc }} </small>
   <p class="card-text row">
     <span class="col">Login Id</span>
     <span class="col">{{ userData.login }}</span>

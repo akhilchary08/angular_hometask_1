@@ -12,6 +12,8 @@ import { ActiveModule } from './active/active.module';
 import { DeletedModule } from './deleted/deleted.module';
 import { ManageModule } from './manage/manage.module';
 import { ActiveRoutingModule } from './active/active-routing.module';
+import { ShareModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, HomeComponent],
@@ -24,6 +26,8 @@ import { ActiveRoutingModule } from './active/active-routing.module';
     DeletedModule,
     ManageModule,
     NgbModule,
+    ShareModule,
+    HttpClientModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent],

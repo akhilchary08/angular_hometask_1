@@ -1,7 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ActiveComponent } from 'src/app/active/active.component';
+import { DeletedComponent } from 'src/app/deleted/deleted.component';
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
+
 
 @Component({
   selector: 'app-user',
@@ -9,7 +12,13 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  constructor(private router: Router, private route: ActivatedRoute,private userService:UsersService) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private userService: UsersService,
+    private activeComp:ActiveComponent,
+    private deletedComponent:DeletedComponent
+  ) {}
   @Input() user: User | any;
   @Input() isDeleted: boolean | any;
   @Input() activateButton: boolean | any;
@@ -17,7 +26,7 @@ export class UserComponent implements OnInit {
   @Input() manageButton: boolean | any;
   @Output() public onData: EventEmitter<any> = new EventEmitter<any>();
   borderColor: string = '';
-  
+
   viewUser: boolean = false;
   ngOnInit(): void {
     if (this.user.isDeleted) {
@@ -30,7 +39,21 @@ export class UserComponent implements OnInit {
     console.log(this.user.id);
     this.userService.setSelectedUser(this.user);
     this.router.navigate(['manage', this.user.id]);
-    // this.onData.emit(this.user);
+  }
 
+  activateUser(id: string): void {
+    this.userService.activateUser(id).subscribe((res: any) => {
+      console.log(res);
+      this.deletedComponent.loadDeletedUsers()
+      // this.router.navigate(['/deleted'])
+      
+    });
+  }
+  deactivateUser(id:string):void{
+    this.userService.deactivateUser(id).subscribe((res:any)=>{
+      console.log(res)
+      this.activeComp.loadActiveUsers()
+      // this.router.navigate(['/active'])
+    })
   }
 }

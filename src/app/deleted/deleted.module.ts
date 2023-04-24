@@ -9,6 +9,7 @@ import { DeletedRoutingModule } from './deleted-routing.component';
   declarations: [DeletedComponent],
   imports: [
     CommonModule,ActiveModule,DeletedRoutingModule
-  ]
+  ],
+  providers:[DeletedComponent]
 })
 export class DeletedModule { }

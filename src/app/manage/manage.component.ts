@@ -1,4 +1,6 @@
-import { Component, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { UsersService } from "../services/users.service";
+import { User } from "../interfaces/user";
 
 @Component({
     selector:'app-manage',
@@ -6,4 +8,13 @@ import { Component, ViewEncapsulation } from "@angular/core";
     styleUrls:['./manage.component.css']
 })
 
-export class ManageComponent{}
+export class ManageComponent implements OnInit{
+    allUsers:User[]=[]
+    constructor(private usersServices:UsersService){
+    }
+    ngOnInit():void{
+        this.usersServices.getUsers().subscribe(data=>{
+            this.allUsers=data;
+        })
+    }
+}
