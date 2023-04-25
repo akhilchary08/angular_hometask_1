@@ -10,8 +10,15 @@
   <button class="btn btn-danger deactivate-btn" *ngIf="deactivateButton" (click)="deactivateUser(user.id)">
     Deactivate
   </button>
-  <button *ngIf="manageButton" (click)="detail()" class="btn btn-primary manage-btn">
-    Manage
-  </button>
+  <div class="manage-btn-div">
+  <button *ngIf="manageButton" class="btn btn-warning manage-btn">
+      Edit
+    </button>
+    <button *ngIf="manageButton" (click)="detail()" class="btn btn-primary manage-btn">
+      Details
+    </button>
+  </div>
+ 
+
 </div>
 

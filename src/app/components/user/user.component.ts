@@ -36,7 +36,6 @@ export class UserComponent implements OnInit {
     }
   }
   detail(): void {
-    console.log(this.user.id);
     this.userService.setSelectedUser(this.user);
     this.router.navigate(['manage', this.user.id]);
   }

@@ -8,3 +8,7 @@
     justify-self: flex-end;
 }
 
+.manage-btn-div{
+    display: flex;
+    justify-content: space-between;
+}

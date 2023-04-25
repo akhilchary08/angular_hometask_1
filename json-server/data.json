@@ -7,7 +7,7 @@
       "age": 12,
       "login": "jake123",
       "password": "1234fdsf",
-      "isDeleted": true
+      "isDeleted": false
     },
     {
       "id": "2a3bdac7",
@@ -16,7 +16,7 @@
       "age": 92,
       "login": "user3",
       "password": "1234fdsf",
-      "isDeleted": true
+      "isDeleted": false
     },
     {
       "id": "2a3bdac1",
@@ -34,7 +34,7 @@
       "age": 34,
       "login": "user4",
       "password": "1234fdsf",
-      "isDeleted": false
+      "isDeleted": true
     },
     {
       "id": "2a3bdac3",

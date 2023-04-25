@@ -5,3 +5,9 @@
     margin: 10px 100px 0px 100px;
   }
 
+.create-btn{
+  display: flex;
+  justify-content: end;
+  padding-right: 155px;
+  padding-top: 20px;
+}

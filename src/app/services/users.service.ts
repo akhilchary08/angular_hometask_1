@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, filter, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ActiveUsersPipe } from '../shared/pipes/active-users.pipe';
 import { UserFullNamePipe } from '../shared/pipes/first-last-name.pipe';
@@ -31,13 +31,24 @@ export class UsersService {
   }
 
   // implement the pipe to filter the data
+  // public getActiveUsers(): Observable<User[]> {
+  //   return this.http.get<User[]>(`${this._url}?isDeleted=false`);
+  // }
+
   public getActiveUsers(): Observable<User[]> {
-    console.log('hehe active');
-    return this.http.get<User[]>(`${this._url}?isDeleted=false`);
+    return this.http.get<User[]>(`${this._url}`).pipe(
+      map(data=>data.filter(user=>user.isDeleted===false))
+    )
   }
 
+
+  // public getDeletedUsers(): Observable<User[]> {
+  //   return this.http.get<User[]>(`${this._url}?isDeleted=true`);
+  // }
   public getDeletedUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this._url}?isDeleted=true`);
+    return this.http.get<User[]>(`${this._url}`).pipe(
+      map(data=>data.filter(user=>user.isDeleted===true))
+    )
   }
 
   //create a new user
