@@ -40,6 +40,11 @@ export class UserComponent implements OnInit {
     this.router.navigate(['manage', this.user.id]);
   }
 
+  edit():void{
+    this.userService.setSelectedUser(this.user);
+    this.router.navigate(['manage','edit']);
+  }
+
   activateUser(id: string): void {
     this.userService.activateUser(id).subscribe((res: any) => {
       console.log(res);

@@ -36,27 +36,27 @@ export class UsersService {
   // }
 
   public getActiveUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this._url}`).pipe(
-      map(data=>data.filter(user=>user.isDeleted===false))
-    )
+    return this.http
+      .get<User[]>(`${this._url}`)
+      .pipe(map((data) => data.filter((user) => user.isDeleted === false)));
   }
-
 
   // public getDeletedUsers(): Observable<User[]> {
   //   return this.http.get<User[]>(`${this._url}?isDeleted=true`);
   // }
   public getDeletedUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this._url}`).pipe(
-      map(data=>data.filter(user=>user.isDeleted===true))
-    )
+    return this.http
+      .get<User[]>(`${this._url}`)
+      .pipe(map((data) => data.filter((user) => user.isDeleted === true)));
   }
 
   //create a new user
-  public createUser(newUser: User): any {
+  public createUser(newUser: User): Observable<any> {
+    console.log(newUser, ' hehe ');
     return this.http.post(this._url, newUser);
   }
 
-  public updateUser(updatedData: any, id: string): any {
+  public updateUser(updatedData: any, id: string): Observable<any> {
     return this.http.patch(`${this._url}/${id}`, updatedData);
   }
 

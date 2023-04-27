@@ -1,0 +1,14 @@
+<p>user update element</p>
+
+<form [formGroup]="userUpdateForm" (ngSubmit)="updateUser()">
+  <p>{{ userName | titlecase }}</p>
+  <div class="form-group">
+    <label for="">Password</label>
+    <input type="password" class="form-control" formControlName="password" />
+  </div>
+  <div class="form-group">
+    <label for="">Age</label>
+    <input type="number" class="form-control" formControlName="age" />
+  </div>
+  <button class="btn btn-primary">Update</button>
+</form>

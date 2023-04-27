@@ -4,9 +4,9 @@
       "id": "2a3bdac6",
       "firstName": "user",
       "lastName": "one",
-      "age": 12,
+      "age": 19,
       "login": "jake123",
-      "password": "1234fdsf",
+      "password": "bakayari",
       "isDeleted": false
     },
     {
@@ -53,6 +53,24 @@
       "login": "user6",
       "password": "1234fdsf",
       "isDeleted": true
+    },
+    {
+      "id": "55f7f04b",
+      "firstName": "user",
+      "lastName": "seven",
+      "login": "user7",
+      "password": "6787",
+      "age": 78,
+      "isDeleted": false
+    },
+    {
+      "id": "effe2f5d",
+      "firstName": "bla",
+      "lastName": "bla",
+      "login": "bla1",
+      "password": "bla1",
+      "age": 23,
+      "isDeleted": false
     }
   ]
 }
