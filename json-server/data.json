@@ -7,16 +7,16 @@
       "age": 19,
       "login": "jake123",
       "password": "bakayari",
-      "isDeleted": false
+      "isDeleted": true
     },
     {
       "id": "2a3bdac7",
       "firstName": "user",
       "lastName": "two",
-      "age": 92,
+      "age": 98,
       "login": "user3",
-      "password": "1234fdsf",
-      "isDeleted": false
+      "password": "345rte",
+      "isDeleted": true
     },
     {
       "id": "2a3bdac1",
@@ -34,7 +34,7 @@
       "age": 34,
       "login": "user4",
       "password": "1234fdsf",
-      "isDeleted": true
+      "isDeleted": false
     },
     {
       "id": "2a3bdac3",
@@ -43,7 +43,7 @@
       "age": 67,
       "login": "user5",
       "password": "1234fdsf",
-      "isDeleted": true
+      "isDeleted": false
     },
     {
       "id": "2a3bdac4",
@@ -52,7 +52,7 @@
       "age": 83,
       "login": "user6",
       "password": "1234fdsf",
-      "isDeleted": true
+      "isDeleted": false
     },
     {
       "id": "55f7f04b",
@@ -64,13 +64,22 @@
       "isDeleted": false
     },
     {
-      "id": "effe2f5d",
-      "firstName": "bla",
-      "lastName": "bla",
-      "login": "bla1",
-      "password": "bla1",
-      "age": 23,
+      "id": "ebc1046e",
+      "firstName": "user",
+      "lastName": "eight",
+      "login": "user8",
+      "password": "123456",
+      "age": 34,
       "isDeleted": false
+    },
+    {
+      "id": "b5431e09",
+      "firstName": "fg",
+      "lastName": "hjk",
+      "login": "hkj",
+      "password": "hkj",
+      "age": 123,
+      "isDeleted": true
     }
   ]
 }

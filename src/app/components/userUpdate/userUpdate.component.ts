@@ -11,14 +11,14 @@ export class UserUpdateComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UsersService,
-    private manageComponent:ManageComponent
+    private manageComponent: ManageComponent
   ) {}
   userName: string = '';
-  userId:string='';
+  userId: string = '';
 
   userUpdateForm = this.formBuilder.group({
-    password: [''],
-    age: [0],
+    password: ['', Validators.required],
+    age: [0, Validators.required],
   });
 
   updateForm(): void {
@@ -28,7 +28,7 @@ export class UserUpdateComponent implements OnInit {
         age: data.age,
       });
       this.userName = data.firstName + ' ' + data.lastName;
-      this.userId=data.id
+      this.userId = data.id;
     });
   }
 
@@ -36,9 +36,12 @@ export class UserUpdateComponent implements OnInit {
     this.updateForm();
   }
 
-  updateUser():void{
-    this.userService.updateUser(this.userUpdateForm.value,this.userId).subscribe(data=>{
+  updateUser(): void {
+    this.userService
+      .updateUser(this.userUpdateForm.value, this.userId)
+      .subscribe((data) => {
         this.manageComponent.loadManageUsers();
-    });
+      });
+    alert('user updated');
   }
 }

@@ -5,7 +5,6 @@ import { DeletedComponent } from 'src/app/deleted/deleted.component';
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
 
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -16,8 +15,8 @@ export class UserComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private userService: UsersService,
-    private activeComp:ActiveComponent,
-    private deletedComponent:DeletedComponent
+    private activeComp: ActiveComponent,
+    private deletedComponent: DeletedComponent
   ) {}
   @Input() user: User | any;
   @Input() isDeleted: boolean | any;
@@ -40,24 +39,21 @@ export class UserComponent implements OnInit {
     this.router.navigate(['manage', this.user.id]);
   }
 
-  edit():void{
+  edit(): void {
     this.userService.setSelectedUser(this.user);
-    this.router.navigate(['manage','edit']);
+    this.router.navigate(['manage', 'edit']);
   }
 
   activateUser(id: string): void {
     this.userService.activateUser(id).subscribe((res: any) => {
       console.log(res);
-      this.deletedComponent.loadDeletedUsers()
-      // this.router.navigate(['/deleted'])
-      
+      this.deletedComponent.loadDeletedUsers();
     });
   }
-  deactivateUser(id:string):void{
-    this.userService.deactivateUser(id).subscribe((res:any)=>{
-      console.log(res)
-      this.activeComp.loadActiveUsers()
-      // this.router.navigate(['/active'])
-    })
+  deactivateUser(id: string): void {
+    this.userService.deactivateUser(id).subscribe((res: any) => {
+      console.log(res);
+      this.activeComp.loadActiveUsers();
+    });
   }
 }

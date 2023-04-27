@@ -27,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     ManageModule,
     NgbModule,
     ShareModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [UsersService],
   bootstrap: [AppComponent],

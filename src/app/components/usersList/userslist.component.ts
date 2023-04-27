@@ -8,7 +8,7 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './userslist.component.html',
   styleUrls: ['./userslist.component.css'],
 })
-export class UserslistComponent  {
+export class UserslistComponent {
   usersData: User[] = [];
   urlRoute: string = '';
   manageUser: any;
@@ -16,12 +16,6 @@ export class UserslistComponent  {
   @Input() activateButton: boolean | any;
   @Input() deactivateButton: boolean | any;
   @Input() manageButton: boolean | any;
- @Input() users:User[]|any;
-  constructor(private usersService: UsersService, private router: Router) {}
-//   ngOnInit(): void {
-//     this.usersService.getUsers().subscribe((data) => {
-//       this.usersData = data;
-//     });
-//     console.log(this.manageButton, ' managebtn is deleted');
-//   }
+  @Input() users: User[] | any;
+  constructor() {}
 }

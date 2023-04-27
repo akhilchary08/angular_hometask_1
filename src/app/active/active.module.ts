@@ -9,8 +9,8 @@ import { ShareModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [UserComponent, UserslistComponent, ActiveComponent],
-  imports: [CommonModule, ActiveRoutingModule,ShareModule],
+  imports: [CommonModule, ActiveRoutingModule, ShareModule],
   exports: [UserslistComponent],
-  providers:[ActiveComponent]
+  providers: [ActiveComponent],
 })
 export class ActiveModule {}

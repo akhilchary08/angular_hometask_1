@@ -9,8 +9,5 @@ import { User } from 'src/app/interfaces/user';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-    constructor(private userService:UsersService) {
-        
-    }
-    
+  constructor(private userService: UsersService) {}
 }

@@ -1,12 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name:'activeUsers',
+  name: 'activeUsers',
 })
-
-export class ActiveUsersPipe implements PipeTransform{
-    transform(value: any, ...args: any[]) {
-        console.log(value);
-        return value;
-    }
+export class ActiveUsersPipe implements PipeTransform {
+  transform(value: any, ...args: any[]) {
+    console.log(value);
+    return value;
+  }
 }

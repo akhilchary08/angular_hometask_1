@@ -16,8 +16,8 @@ const routes: Routes = [
         component: UserCreateComponent,
       },
       {
-        path:'edit',
-        component:UserUpdateComponent
+        path: 'edit',
+        component: UserUpdateComponent,
       },
       {
         path: ':id',

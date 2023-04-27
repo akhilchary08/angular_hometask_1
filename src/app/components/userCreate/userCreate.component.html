@@ -1,4 +1,3 @@
-
 <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
   <div class="form-group mb-3">
     <label for="firstName" class="mb-1">First Name</label>
@@ -56,5 +55,7 @@
       >age is required</small
     >
   </div>
-  <button class="btn btn-primary" [disabled]="!createUserForm.valid">Submit</button>
+  <button class="btn btn-primary" [disabled]="!createUserForm.valid">
+    Submit
+  </button>
 </form>

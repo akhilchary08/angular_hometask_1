@@ -7,7 +7,7 @@ import { DeletedComponent } from './deleted.component';
 const routes: Routes = [
   {
     path: '',
-    pathMatch:'full',
+    pathMatch: 'full',
     component: DeletedComponent,
   },
 ];
@@ -17,4 +17,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class DeletedRoutingModule {}
-// export const activeRouting = RouterModule.forRoot(routes);

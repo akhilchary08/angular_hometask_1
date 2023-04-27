@@ -14,15 +14,8 @@ export class UserCreateComponent {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UsersService,
-    private manageComponent:ManageComponent
+    private manageComponent: ManageComponent
   ) {}
-  // createUserForm=new FormGroup({
-  //     firstName:new FormControl(''),
-  //     lastName:new FormControl(''),
-  //     login:new FormControl(''),
-  //     password:new FormControl(''),
-  //     age:new FormControl('')
-  // })
   get getFirstName() {
     return this.createUserForm.get('firstName');
   }
@@ -34,7 +27,7 @@ export class UserCreateComponent {
     age: ['', Validators.required],
   });
   // public userFormData:User|any=
-  getUserFormData = ():User | any => {
+  getUserFormData = (): User | any => {
     return {
       id: uuid.v4().slice(0, 8),
       firstName: this.createUserForm.value.firstName,
@@ -46,9 +39,9 @@ export class UserCreateComponent {
     };
   };
   onSubmit() {
-     this.userService.createUser(this.getUserFormData()).subscribe(data=>{
-        this.manageComponent.loadManageUsers();
-        this.createUserForm.reset();
-    })
+    this.userService.createUser(this.getUserFormData()).subscribe((data) => {
+      this.manageComponent.loadManageUsers();
+      this.createUserForm.reset();
+    });
   }
 }

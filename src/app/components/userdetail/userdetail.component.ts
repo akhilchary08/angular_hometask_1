@@ -12,13 +12,11 @@ export class UserdetailComponent implements OnInit {
   constructor(private router: Router, private usersService: UsersService) {}
   @Input() id: string | any;
   url: string = this.router.url;
-  userData: User | any = {}; 
+  userData: User | any = {};
 
   ngOnInit(): void {
     this.usersService.getSelectedUser().subscribe((data) => {
       this.userData = data;
     });
   }
-
-
 }
